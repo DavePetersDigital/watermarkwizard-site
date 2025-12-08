@@ -54,9 +54,10 @@ export default function Home() {
                 });
               }
             }}
-            className="px-6 py-3 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition"
+            disabled={true}
+            className="px-6 py-3 bg-gray-400 text-gray-600 rounded-lg text-sm font-semibold cursor-not-allowed transition"
           >
-            Buy Now
+            Coming Soon
           </button>
         </div>
 
@@ -195,7 +196,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={monthlyId}>Choose Monthly</BuyButton>
+          <BuyButton priceId={monthlyId} disabled={true}>Choose Monthly</BuyButton>
         </div>
 
         {/* YEARLY — MOST POPULAR */}
@@ -233,7 +234,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={yearlyId}>Choose Yearly</BuyButton>
+          <BuyButton priceId={yearlyId} disabled={true}>Choose Yearly</BuyButton>
         </div>
 
         {/* TWO-YEAR LICENSE */}
@@ -271,7 +272,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={twoYearId}>Choose 2-Year License</BuyButton>
+          <BuyButton priceId={twoYearId} disabled={true}>Choose 2-Year License</BuyButton>
         </div>
       </div>
 

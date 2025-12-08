@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 
-export default function BuyButton({ priceId, children }) {
+export default function BuyButton({ priceId, children, disabled = false }) {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [email, setEmail] = useState("");
 
   const handleButtonClick = () => {
+    if (disabled) return; // Don't do anything if disabled
+    
     if (showEmailInput && email.trim()) {
       // Email is entered, proceed to checkout
       openCheckout();
@@ -17,6 +19,8 @@ export default function BuyButton({ priceId, children }) {
   };
 
   const openCheckout = () => {
+    if (disabled) return; // Don't open checkout if disabled
+    
     if (typeof window === "undefined" || !window.Paddle) {
       console.warn("Paddle not ready yet.");
       return;
@@ -60,7 +64,7 @@ export default function BuyButton({ priceId, children }) {
 
   return (
     <div className="w-full">
-      {showEmailInput && (
+      {showEmailInput && !disabled && (
         <div className="mb-4 p-4 bg-purple-50 border-2 border-purple-200 rounded-lg">
           <label htmlFor={`email-${priceId}`} className="block text-sm font-semibold text-gray-800 mb-2">
             📧 Enter your email address
@@ -105,9 +109,14 @@ export default function BuyButton({ priceId, children }) {
       {!showEmailInput && (
         <button
           onClick={handleButtonClick}
-          className="mt-auto w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-purple-600 text-white hover:bg-purple-700 transition"
+          disabled={disabled}
+          className={`mt-auto w-full px-4 py-2.5 rounded-lg text-sm font-semibold transition ${
+            disabled 
+              ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+              : 'bg-purple-600 text-white hover:bg-purple-700'
+          }`}
         >
-          {children}
+          {disabled ? 'Coming Soon' : children}
         </button>
       )}
     </div>

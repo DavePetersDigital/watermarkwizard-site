@@ -12,10 +12,40 @@ export default function Pricing() {
       <p className="text-gray-700 text-sm md:text-base mb-1">
         Fast, private watermarking for photographers, Etsy sellers, real estate agents and digital creators.
       </p>
-      <p className="text-gray-500 text-xs md:text-sm mb-10">
+      <p className="text-gray-500 text-xs md:text-sm mb-6">
         All prices in <span className="font-semibold">USD</span>. Currency conversion, tax handling and 
         secure payment processing are completed automatically at checkout.
       </p>
+
+      {/* Trial Callout */}
+      <div className="mb-12 p-6 bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl max-w-2xl mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-2xl">🎁</span>
+          <h3 className="text-xl font-bold text-purple-900">Start with a Free Trial</h3>
+        </div>
+        <p className="text-gray-700 text-sm mb-3">
+          Download Watermark Wizard and try it free for <strong>3 days</strong> with <strong>25 images</strong> included — no credit card required.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600 mb-4">
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>Full feature access</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>No credit card needed</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>Upgrade anytime</span>
+          </div>
+        </div>
+        <div className="text-center">
+          <a
+            href="/download"
+            className="inline-block px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
+          >
+            Download Free Trial →
+          </a>
+        </div>
+      </div>
 
       {/* Feature list */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14 text-left max-w-xl mx-auto">
@@ -41,12 +71,12 @@ export default function Pricing() {
         <div className="border rounded-2xl p-6 shadow-sm flex flex-col bg-white">
           <h2 className="text-lg font-semibold mb-1">Monthly</h2>
           <p className="text-2xl font-bold">$4.99</p>
-          <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+          <p className="text-xs uppercase tracking-wide text-gray-500 mb-2">
             per month • auto-renews
           </p>
 
           <p className="text-sm text-gray-700 mb-4">
-            Best if you want to try Watermark Wizard with zero commitment.
+            Start with a free 3-day trial, then continue with monthly access. Best if you want flexibility with zero long-term commitment.
           </p>
 
           <div className="space-y-2 mb-6">

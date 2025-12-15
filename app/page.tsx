@@ -19,8 +19,11 @@ export default function Home() {
           Image Watermarking
         </h1>
 
-        <p className="text-lg md:text-xl font-semibold text-black mb-6">
+        <p className="text-lg md:text-xl font-semibold text-black mb-2">
           Works on Mac & Windows
+        </p>
+        <p className="text-base text-gray-600 mb-6">
+          Start with a free 3-day trial — no credit card required
         </p>
 
         {/* OS Badge */}
@@ -37,28 +40,18 @@ export default function Home() {
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <a
-            href="#pricing"
+            href="/download"
             className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
+          >
+            Download Free Trial
+          </a>
+
+          <a
+            href="#pricing"
+            className="px-6 py-3 bg-white text-purple-600 border-2 border-purple-600 rounded-lg text-sm font-semibold hover:bg-purple-50 transition"
           >
             View Pricing
           </a>
-
-          <button
-            onClick={() => {
-              if (typeof window !== "undefined" && window.Paddle) {
-                window.Paddle.Checkout.open({
-                  items: [{ priceId: yearlyId }],
-                  // Note: Email will be collected by Paddle during checkout
-                  // If you want to pre-fill, add: customer: { email: "customer@example.com" }
-                  // And customData: { email: "customer@example.com" } to pass to webhooks
-                });
-              }
-            }}
-            disabled={true}
-            className="px-6 py-3 bg-gray-400 text-gray-600 rounded-lg text-sm font-semibold cursor-not-allowed transition"
-          >
-            Coming Soon
-          </button>
         </div>
 
         {/* Placeholder Mockup */}
@@ -157,12 +150,44 @@ export default function Home() {
 
       {/* -------------------------------------------------- */}
 
+      {/* TRIAL CALLOUT */}
+      <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl max-w-2xl mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-2xl">🎁</span>
+          <h3 className="text-xl font-bold text-purple-900">Try Before You Buy</h3>
+        </div>
+        <p className="text-gray-700 text-sm mb-3">
+          Download Watermark Wizard and get started with a <strong>free 3-day trial</strong> — no credit card required.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>3 days free</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>25 images included</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>✓</span> <span>All features unlocked</span>
+          </div>
+        </div>
+        <div className="mt-4 text-center">
+          <a
+            href="/download"
+            className="inline-block px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
+          >
+            Start Free Trial →
+          </a>
+        </div>
+      </div>
+
       {/* PRICING */}
       <div id="pricing" className="mt-12 mb-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Pricing</h2>
 
         <p className="text-gray-600 text-sm mb-10">
-          One purchase unlocks both macOS & Windows versions. All prices in USD — converted to your local currency at checkout, with any taxes applied automatically.
+          Start with a <strong>free 3-day trial</strong> (25 images included). 
+          One purchase unlocks both macOS & Windows versions. 
+          All prices in USD — converted to your local currency at checkout, with any taxes applied automatically.
         </p>
       </div>
 
@@ -178,8 +203,11 @@ export default function Home() {
 
           <h3 className="text-lg font-semibold mb-1">Monthly</h3>
           <p className="text-2xl font-bold">$4.99</p>
-          <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+          <p className="text-xs uppercase tracking-wide text-gray-500 mb-2">
             per month • auto-renews
+          </p>
+          <p className="text-sm text-gray-700 mb-4">
+            Start with a free 3-day trial, then continue with monthly access. Best if you want flexibility with zero long-term commitment.
           </p>
 
           <div className="space-y-2 mb-6">

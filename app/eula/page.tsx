@@ -6,46 +6,27 @@ export default function EulaPage() {
       </h1>
 
       <p className="text-gray-700 mb-4">
-        This End User License Agreement (“EULA”) is a legal agreement between you (“the user”)
-        and the owner of Watermark Wizard (“we”, “us”). By installing or using Watermark Wizard
-        (“the Software”), you agree to the terms of this EULA.
+        This End User License Agreement ("EULA") is a legal agreement between you ("the user")
+        and the owner of Watermark Wizard ("we", "us"). By installing or using Watermark Wizard
+        ("the Software"), you agree to the terms of this EULA.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">1. License Grant</h2>
       <p className="text-gray-700 mb-4">
-        Subject to an active plan or license, we grant you a non-exclusive, non-transferable
-        license to install and use the Software on up to <strong>two devices</strong> in any
-        combination of macOS and Windows that you own or control.
+        Watermark Wizard is licensed, not sold. During a free trial period, we grant you a limited, non-exclusive, non-transferable license to install and use the Software on one device.
+      </p>
+      <p className="text-gray-700 mb-4">
+        With an active paid subscription, we grant you a non-exclusive, non-transferable license to install and use the Software on up to two devices in any combination of macOS and Windows that you own or control.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">2. Plan Types and Duration</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">2. License Duration</h2>
       <p className="text-gray-700 mb-4">
-        Your right to use the Software depends on the type of plan you have purchased:
-      </p>
-      <ul className="list-disc ml-6 text-gray-700 mb-4">
-        <li>
-          <strong>Monthly Subscription</strong> – You may use the Software while your monthly
-          subscription is active and paid. The subscription renews automatically each month unless cancelled.
-        </li>
-        <li>
-          <strong>Yearly Subscription</strong> – You may use the Software while your yearly
-          subscription is active and paid. The subscription renews automatically every 12 months unless cancelled.
-        </li>
-        <li>
-          <strong>2-Year Creator License</strong> – You may use the Software for 24 months from
-          the date of purchase. This license is fixed-term and does not auto-renew.
-        </li>
-      </ul>
-      <p className="text-gray-700 mb-4">
-        When your subscription or license expires or is cancelled, your right to use the Software
-        ends and you must stop using it.
+        Your right to use the Software is valid only while your trial or paid subscription is active. When your trial expires or your subscription ends or is cancelled, your right to use the Software automatically terminates.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">3. Permitted Use</h2>
       <p className="text-gray-700 mb-4">
-        You may use the Software to add your logo or watermark to images you own or are licensed
-        to use, for both personal and commercial projects, subject to any third-party rights in
-        the images themselves.
+        You may use the Software to add watermarks or logos to images that you own or are licensed to use, for both personal and commercial purposes, subject to any third-party rights in the images themselves.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">4. Restrictions</h2>
@@ -53,58 +34,51 @@ export default function EulaPage() {
         You agree that you will not:
       </p>
       <ul className="list-disc ml-6 text-gray-700 mb-4">
-        <li>Sell, rent, lease, sublicense or distribute the Software to others;</li>
-        <li>Share your license key, activation details or download links with any other person;</li>
-        <li>Install or use the Software on more than two devices at the same time under a single license;</li>
-        <li>Reverse engineer, decompile, disassemble or attempt to access the source code, except where permitted by law;</li>
-        <li>Bypass or interfere with any license, activation or security mechanisms.</li>
+        <li>Sell, rent, lease, sublicense or distribute the Software;</li>
+        <li>Share license keys, activation details or access credentials;</li>
+        <li>Use the Software on more devices than permitted by your license;</li>
+        <li>Reverse engineer, decompile or attempt to access the source code, except where permitted by law;</li>
+        <li>Bypass or interfere with license enforcement or security mechanisms.</li>
       </ul>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">5. Ownership</h2>
       <p className="text-gray-700 mb-4">
-        The Software is licensed, not sold. All intellectual property rights in and to the Software
-        remain with us. This EULA does not grant you any ownership rights in the Software or its code.
+        The Software is licensed, not sold. All intellectual property rights in and to the Software remain with us. This EULA does not grant you ownership rights in the Software or its code.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">6. Image Processing and Privacy</h2>
       <p className="text-gray-700 mb-4">
-        The Software processes images locally on your device. Images are not uploaded or stored
-        on our servers. You are responsible for backing up your own files and for ensuring that
-        you have the right to use any images you process with the Software.
+        The Software processes images locally on your device. Images are not uploaded or stored on our servers. You are responsible for backing up your files and ensuring you have rights to any images processed.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">7. Updates</h2>
       <p className="text-gray-700 mb-4">
-        We may provide updates, improvements or bug fixes for the Software from time to time.
-        For subscription plans, updates are included while your subscription remains active.
-        For the 2-Year Creator License, updates are included for the duration of the 24-month term.
+        We may provide updates, improvements or bug fixes from time to time. Access to updates is provided while your trial or paid subscription remains active.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">8. Termination</h2>
       <p className="text-gray-700 mb-4">
-        This EULA is effective until terminated. It will automatically terminate if your subscription
-        or 2-year license expires, or if you fail to comply with any of its terms. Upon termination,
-        you must stop using the Software and uninstall it from your devices.
+        This EULA remains effective until terminated. It will terminate automatically if your trial or subscription expires or if you breach these terms. Upon termination, you must stop using and uninstall the Software.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">9. Disclaimer of Warranties</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">9. Payments</h2>
       <p className="text-gray-700 mb-4">
-        The Software is provided “as is” and “as available,” without warranty of any kind, either
-        express or implied, including but not limited to implied warranties of merchantability,
-        fitness for a particular purpose and non-infringement.
+        Payments and refunds are handled by Paddle.com, which acts as our payment provider and merchant of record. We do not process or store payment card information.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">10. Limitation of Liability</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">10. Disclaimer of Warranties</h2>
       <p className="text-gray-700 mb-4">
-        To the maximum extent permitted by law, we are not liable for any indirect, incidental,
-        special, consequential or punitive damages, or for any loss of data or profits, arising
-        from your use of or inability to use the Software.
+        The Software is provided "as is" and "as available," without warranties of any kind, express or implied.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">11. Governing Law</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">11. Limitation of Liability</h2>
       <p className="text-gray-700 mb-4">
-        This EULA is governed by the laws of Australia. Any disputes arising from or relating to
-        this EULA or the Software will be subject to the exclusive jurisdiction of the courts in Australia.
+        To the maximum extent permitted by law, we are not liable for indirect, incidental or consequential damages arising from use of the Software.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">12. Governing Law</h2>
+      <p className="text-gray-700 mb-4">
+        This EULA is governed by the laws of Australia, and disputes shall be subject to the jurisdiction of Australian courts.
       </p>
 
       <p className="mt-8 text-gray-500 text-sm">

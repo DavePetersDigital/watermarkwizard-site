@@ -8,6 +8,11 @@ export default function Home() {
   const monthlyId = process.env.NEXT_PUBLIC_PADDLE_MONTHLY_ID;
   const yearlyId = process.env.NEXT_PUBLIC_PADDLE_YEARLY_ID;
   const twoYearId = process.env.NEXT_PUBLIC_PADDLE_2YEAR_ID;
+  
+  // Control checkout availability via environment variable
+  // Set NEXT_PUBLIC_ENABLE_CHECKOUT=true to enable checkout buttons
+  // Default: false (disabled) for production safety
+  const checkoutEnabled = process.env.NEXT_PUBLIC_ENABLE_CHECKOUT === "true";
 
   return (
     <div className="px-6 md:px-10 py-16 max-w-6xl mx-auto text-center">
@@ -224,7 +229,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={monthlyId}>Choose Monthly</BuyButton>
+          <BuyButton priceId={monthlyId} disabled={!checkoutEnabled}>Choose Monthly</BuyButton>
         </div>
 
         {/* YEARLY — MOST POPULAR */}
@@ -262,7 +267,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={yearlyId}>Choose Yearly</BuyButton>
+          <BuyButton priceId={yearlyId} disabled={!checkoutEnabled}>Choose Yearly</BuyButton>
         </div>
 
         {/* TWO-YEAR LICENSE */}
@@ -300,7 +305,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={twoYearId}>Choose 2-Year License</BuyButton>
+          <BuyButton priceId={twoYearId} disabled={!checkoutEnabled}>Choose 2-Year License</BuyButton>
         </div>
       </div>
 

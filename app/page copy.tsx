@@ -5,9 +5,9 @@ import BuyButton from "./components/BuyButton";
 import { Apple, Monitor, Lock } from "lucide-react";
 
 export default function Home() {
-  const monthlyId = process.env.NEXT_PUBLIC_PADDLE_MONTHLY_ID;
-  const yearlyId = process.env.NEXT_PUBLIC_PADDLE_YEARLY_ID;
-  const twoYearId = process.env.NEXT_PUBLIC_PADDLE_2YEAR_ID;
+  const essentialId = process.env.NEXT_PUBLIC_PADDLE_ESSENTIAL_ID;
+  const professionalId = process.env.NEXT_PUBLIC_PADDLE_PROFESSIONAL_ID;
+  const creatorId = process.env.NEXT_PUBLIC_PADDLE_CREATOR_ID;
 
   return (
     <div className="px-6 md:px-10 py-16 max-w-6xl mx-auto text-center">
@@ -51,7 +51,7 @@ export default function Home() {
             onClick={() => {
               if (typeof window !== "undefined" && window.Paddle) {
                 window.Paddle.Checkout.open({
-                  items: [{ priceId: yearlyId }]
+                  items: [{ priceId: professionalId }]
                 });
               }
             }}
@@ -169,7 +169,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={monthlyId}>Choose Monthly</BuyButton>
+          <BuyButton priceId={essentialId}>Choose Monthly</BuyButton>
         </div>
 
         {/* ================= YEARLY ================= */}
@@ -207,7 +207,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={yearlyId}>Choose Yearly</BuyButton>
+          <BuyButton priceId={professionalId}>Choose Yearly</BuyButton>
         </div>
 
         {/* ================= 2-YEAR ================= */}
@@ -245,7 +245,7 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={twoYearId}>Choose 2-Year License</BuyButton>
+          <BuyButton priceId={creatorId}>Choose 2-Year License</BuyButton>
         </div>
       </div>
 

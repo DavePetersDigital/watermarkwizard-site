@@ -24,7 +24,7 @@ export default function Pricing() {
           <h3 className="text-xl font-bold text-purple-900">Start with a Free Trial</h3>
         </div>
         <p className="text-gray-700 text-sm mb-3">
-          Download Watermark Wizard and try it free for <strong>3 days</strong> with <strong>25 images</strong> included — no credit card required.
+          Download Watermark Wizard and try it free for <strong>7 days</strong> with <strong>100 images</strong> included — no credit card required.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600 mb-4">
           <div className="flex items-center gap-1">
@@ -67,16 +67,12 @@ export default function Pricing() {
       {/* Pricing grid */}
       <div className="grid gap-6 md:grid-cols-3 text-left">
 
-        {/* Monthly plan */}
+        {/* Essential License */}
         <div className="border rounded-2xl p-6 shadow-sm flex flex-col bg-white">
-          <h2 className="text-lg font-semibold mb-1">Monthly</h2>
-          <p className="text-2xl font-bold">$4.99</p>
+          <h2 className="text-lg font-semibold mb-1">Essential License</h2>
+          <p className="text-2xl font-bold">$14.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500 mb-2">
-            per month • auto-renews
-          </p>
-
-          <p className="text-sm text-gray-700 mb-4">
-            Start with a free 3-day trial, then continue with monthly access. Best if you want flexibility with zero long-term commitment.
+            90 days • auto-renews
           </p>
 
           <div className="space-y-2 mb-6">
@@ -94,23 +90,23 @@ export default function Pricing() {
           </div>
 
           <button className="mt-auto w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-purple-600 text-white hover:bg-purple-700 transition">
-            Choose Monthly
+            Choose Essential License
           </button>
         </div>
 
-        {/* Yearly plan — Most Popular */}
+        {/* Professional License — Most Popular */}
         <div className="border-2 border-purple-600 rounded-2xl p-6 shadow-md flex flex-col bg-white relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-[11px] font-semibold px-3 py-1 rounded-full">
             MOST POPULAR
           </div>
 
-          <h2 className="text-lg font-semibold mb-1">Yearly</h2>
-          <p className="text-2xl font-bold">$29.99</p>
+          <h2 className="text-lg font-semibold mb-1">Professional License</h2>
+          <p className="text-2xl font-bold">$39.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500">
-            per year • auto-renews
+            365 days • auto-renews
           </p>
           <p className="text-xs text-green-700 font-medium mb-4">
-            Save over 50% vs monthly
+            Save 33% vs Essential
           </p>
 
           <p className="text-sm text-gray-700 mb-4">
@@ -133,23 +129,23 @@ export default function Pricing() {
           </div>
 
           <button className="mt-auto w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-purple-600 text-white hover:bg-purple-700 transition">
-            Choose Yearly
+            Choose Professional License
           </button>
         </div>
 
-        {/* 2-Year Creator License — No Subscription */}
+        {/* Creator License — No Subscription */}
         <div className="border rounded-2xl p-6 shadow-sm flex flex-col bg-white relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[11px] font-semibold px-3 py-1 rounded-full">
             NO SUBSCRIPTION
           </div>
 
-          <h2 className="text-lg font-semibold mb-1">2-Year Creator License</h2>
+          <h2 className="text-lg font-semibold mb-1">Creator License</h2>
           <p className="text-2xl font-bold">$59.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
-            24 months of access
+            730 days of access
           </p>
           <p className="text-xs text-gray-500 mb-4">
-            Pay once — access and updates for 2 full years.
+            Pay once — access and updates for 2 full years. Does not auto-renew.
           </p>
 
           <p className="text-sm text-gray-700 mb-4">
@@ -172,14 +168,14 @@ export default function Pricing() {
           </div>
 
           <button className="mt-auto w-full px-4 py-2.5 rounded-lg text-sm font-semibold bg-purple-600 text-white hover:bg-purple-700 transition">
-            Choose 2-Year License
+            Choose Creator License
           </button>
         </div>
       </div>
 
       <p className="mt-10 text-xs text-gray-500 leading-relaxed max-w-xl mx-auto">
-        Monthly and yearly subscriptions auto-renew unless cancelled. 
-        The 2-Year Creator License is a fixed-term license and does not auto-renew. 
+        Essential and Professional licenses auto-renew unless cancelled. 
+        The Creator License is a fixed-term license and does not auto-renew. 
         You may cancel a subscription at any time; access continues until the end of your billing period.
       </p>
     </div>

@@ -5,9 +5,30 @@ import BuyButton from "./components/BuyButton";
 import Image from "next/image";
 
 export default function Home() {
-  const monthlyId = process.env.NEXT_PUBLIC_PADDLE_MONTHLY_ID;
-  const yearlyId = process.env.NEXT_PUBLIC_PADDLE_YEARLY_ID;
-  const twoYearId = process.env.NEXT_PUBLIC_PADDLE_2YEAR_ID;
+  const essentialId = process.env.NEXT_PUBLIC_PADDLE_ESSENTIAL_ID;
+  const professionalId = process.env.NEXT_PUBLIC_PADDLE_PROFESSIONAL_ID;
+  const creatorId = process.env.NEXT_PUBLIC_PADDLE_CREATOR_ID;
+  
+  // Debug: Log price IDs (remove in production)
+  console.log("Price IDs loaded:", {
+    essential: essentialId,
+    professional: professionalId,
+    creator: creatorId,
+    environment: process.env.NEXT_PUBLIC_PADDLE_ENV
+  });
+  
+  // Check if any are undefined
+  if (!essentialId || !professionalId || !creatorId) {
+    console.error("⚠️ Missing price IDs:", {
+      essential: essentialId ? "OK" : "MISSING",
+      professional: professionalId ? "OK" : "MISSING",
+      creator: creatorId ? "OK" : "MISSING"
+    });
+    console.error("Make sure your .env.local file has:");
+    console.error("NEXT_PUBLIC_PADDLE_ESSENTIAL_ID=pri_...");
+    console.error("NEXT_PUBLIC_PADDLE_PROFESSIONAL_ID=pri_...");
+    console.error("NEXT_PUBLIC_PADDLE_CREATOR_ID=pri_...");
+  }
   
   // Control checkout availability via environment variable
   // Set NEXT_PUBLIC_ENABLE_CHECKOUT=true to enable checkout buttons
@@ -28,7 +49,7 @@ export default function Home() {
           Works on Mac & Windows
         </p>
         <p className="text-base text-gray-600 mb-6">
-          Start with a free 3-day trial — no credit card required
+          Start with a free 7-day trial — no credit card required
         </p>
 
         {/* OS Badge */}
@@ -59,48 +80,29 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Placeholder Mockup */}
+        {/* Video Demo - YouTube Embed */}
         <div className="flex justify-center mt-6 mb-20">
-          <svg
-            width="650"
-            height="380"
-            className="max-w-full"
+          <div 
+            className="relative max-w-full rounded-2xl overflow-hidden shadow-2xl"
             style={{
-              transform: "rotate(-10deg)",
-              filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
+              maxWidth: "650px",
+              width: "100%",
+              aspectRatio: "16/9"
             }}
           >
-            <rect width="650" height="380" rx="24" fill="#ffffff" stroke="#e5e7eb" />
-            <rect width="650" height="56" rx="24" fill="#f3f4f6" />
-            <circle cx="32" cy="28" r="6" fill="#f87171" />
-            <circle cx="54" cy="28" r="6" fill="#facc15" />
-            <circle cx="76" cy="28" r="6" fill="#4ade80" />
-            <rect x="50" y="110" width="230" height="160" rx="16" fill="#e0f2fe" />
-            <rect x="300" y="110" width="200" height="24" rx="12" fill="#ede9fe" />
-            <rect x="300" y="150" width="260" height="24" rx="12" fill="#ede9fe" />
-            <rect x="300" y="190" width="180" height="24" rx="12" fill="#ede9fe" />
-            <rect x="300" y="250" width="150" height="34" rx="16" fill="#a855f7" />
-            <text
-              x="375"
-              y="272"
-              textAnchor="middle"
-              fill="#ffffff"
-              fontSize="14"
-              fontFamily="system-ui"
-            >
-              Export Watermarked
-            </text>
-            <text
-              x="325"
-              y="350"
-              textAnchor="middle"
-              fill="#9ca3af"
-              fontSize="16"
-              fontFamily="system-ui"
-            >
-              Mockup — replace with real app UI later
-            </text>
-          </svg>
+            <div className="relative w-full h-0 pb-[56.25%]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                src="https://www.youtube.com/embed/3hMy6DfHQZA"
+                title="Watermark Wizard Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{
+                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
+                }}
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -162,14 +164,14 @@ export default function Home() {
           <h3 className="text-xl font-bold text-purple-900">Try Before You Buy</h3>
         </div>
         <p className="text-gray-700 text-sm mb-3">
-          Download Watermark Wizard and get started with a <strong>free 3-day trial</strong> — no credit card required.
+          Download Watermark Wizard and get started with a <strong>free 7-day trial</strong> — no credit card required.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
           <div className="flex items-center gap-1">
-            <span>✓</span> <span>3 days free</span>
+            <span>✓</span> <span>7 days free</span>
           </div>
           <div className="flex items-center gap-1">
-            <span>✓</span> <span>25 images included</span>
+            <span>✓</span> <span>100 images included</span>
           </div>
           <div className="flex items-center gap-1">
             <span>✓</span> <span>All features unlocked</span>
@@ -190,7 +192,7 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Pricing</h2>
 
         <p className="text-gray-600 text-sm mb-10">
-          Start with a <strong>free 3-day trial</strong> (25 images included). 
+          Start with a <strong>free 7-day trial</strong> (100 images included). 
           One purchase unlocks both macOS & Windows versions. 
           All prices in USD — converted to your local currency at checkout, with any taxes applied automatically.
         </p>
@@ -199,20 +201,17 @@ export default function Home() {
       {/* PRICING CARDS */}
       <div className="grid gap-6 md:grid-cols-3 text-left">
 
-        {/* MONTHLY */}
+        {/* ESSENTIAL LICENSE */}
         <div className="border rounded-2xl p-6 shadow-sm flex flex-col bg-white">
           <div className="flex items-center gap-2 mb-3">
             <Image src="/Apple-Logo.png" width={16} height={16} alt="Apple" />
-            <Image src="/Windows-Logo.png" width={17} height={17} alt="Windows" />
+            <Image src="/Windows-Logo.png" width={16} height={16} alt="Windows" style={{ height: 'auto' }} />
           </div>
 
-          <h3 className="text-lg font-semibold mb-1">Monthly</h3>
-          <p className="text-2xl font-bold">$4.99</p>
+          <h3 className="text-lg font-semibold mb-1">Essential License</h3>
+          <p className="text-2xl font-bold">$14.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500 mb-2">
-            per month • auto-renews
-          </p>
-          <p className="text-sm text-gray-700 mb-4">
-            Start with a free 3-day trial, then continue with monthly access. Best if you want flexibility with zero long-term commitment.
+            90 days • auto-renews
           </p>
 
           <div className="space-y-2 mb-6">
@@ -229,10 +228,12 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={monthlyId} disabled={!checkoutEnabled}>Choose Monthly</BuyButton>
+          <div className="mt-auto">
+            <BuyButton priceId={essentialId} disabled={!checkoutEnabled}>Choose Essential License</BuyButton>
+          </div>
         </div>
 
-        {/* YEARLY — MOST POPULAR */}
+        {/* PROFESSIONAL LICENSE — MOST POPULAR */}
         <div className="border-2 border-purple-600 rounded-2xl p-6 shadow-md flex flex-col bg-white relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-[11px] font-semibold px-3 py-1 rounded-full">
             MOST POPULAR
@@ -240,16 +241,16 @@ export default function Home() {
 
           <div className="flex items-center gap-2 mb-3">
             <Image src="/Apple-Logo.png" width={16} height={16} alt="Apple" />
-            <Image src="/Windows-Logo.png" width={17} height={17} alt="Windows" />
+            <Image src="/Windows-Logo.png" width={16} height={16} alt="Windows" style={{ height: 'auto' }} />
           </div>
 
-          <h3 className="text-lg font-semibold mb-1">Yearly</h3>
-          <p className="text-2xl font-bold">$29.99</p>
+          <h3 className="text-lg font-semibold mb-1">Professional License</h3>
+          <p className="text-2xl font-bold">$39.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500">
-            per year • auto-renews
+            365 days • auto-renews
           </p>
           <p className="text-xs text-green-700 font-medium mb-4">
-            Save 50% vs monthly
+            Save 33% vs Essential
           </p>
 
           <div className="space-y-2 mb-6">
@@ -267,10 +268,12 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={yearlyId} disabled={!checkoutEnabled}>Choose Yearly</BuyButton>
+          <div className="mt-auto">
+            <BuyButton priceId={professionalId} disabled={!checkoutEnabled}>Choose Professional License</BuyButton>
+          </div>
         </div>
 
-        {/* TWO-YEAR LICENSE */}
+        {/* CREATOR LICENSE */}
         <div className="border rounded-2xl p-6 shadow-sm flex flex-col bg-white relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[11px] font-semibold px-3 py-1 rounded-full">
             NO SUBSCRIPTION
@@ -278,16 +281,16 @@ export default function Home() {
 
           <div className="flex items-center gap-2 mb-3">
             <Image src="/Apple-Logo.png" width={16} height={16} alt="Apple" />
-            <Image src="/Windows-Logo.png" width={17} height={17} alt="Windows" />
+            <Image src="/Windows-Logo.png" width={16} height={16} alt="Windows" style={{ height: 'auto' }} />
           </div>
 
-          <h3 className="text-lg font-semibold mb-1">2-Year Creator License</h3>
+          <h3 className="text-lg font-semibold mb-1">Creator License</h3>
           <p className="text-2xl font-bold">$59.99</p>
           <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
-            24 months of access
+            730 days of access
           </p>
           <p className="text-xs text-gray-500 mb-4">
-            Pay once — access and updates for 2 full years.
+            Pay once — access and updates for 2 full years. Does not auto-renew.
           </p>
 
           <div className="space-y-2 mb-6">
@@ -305,14 +308,16 @@ export default function Home() {
             ))}
           </div>
 
-          <BuyButton priceId={twoYearId} disabled={!checkoutEnabled}>Choose 2-Year License</BuyButton>
+          <div className="mt-auto">
+            <BuyButton priceId={creatorId} disabled={!checkoutEnabled}>Choose Creator License</BuyButton>
+          </div>
         </div>
       </div>
 
       {/* Footer Note */}
       <p className="mt-10 text-xs text-gray-500 leading-relaxed max-w-xl mx-auto">
-        Monthly and yearly subscriptions auto-renew unless cancelled.
-        The 2-Year Creator License does not auto-renew.
+        Essential and Professional licenses auto-renew unless cancelled.
+        The Creator License does not auto-renew.
         You may cancel at any time; access continues until the end of the billing period.
       </p>
 

@@ -23,6 +23,7 @@ export default function BuyButton({ priceId, children, disabled = false }) {
     
     if (typeof window === "undefined" || !window.Paddle) {
       console.warn("Paddle not ready yet.");
+      alert("Paddle is not ready yet. Please wait a moment and try again.");
       return;
     }
 
@@ -32,14 +33,27 @@ export default function BuyButton({ priceId, children, disabled = false }) {
       return;
     }
 
+    if (!priceId) {
+      console.error("Price ID is missing!");
+      console.error("Received priceId value:", priceId);
+      console.error("priceId type:", typeof priceId);
+      console.error("priceId === undefined:", priceId === undefined);
+      console.error("priceId === null:", priceId === null);
+      console.error("priceId === '':", priceId === '');
+      alert(`Error: Price ID is missing. Received: "${priceId}" (type: ${typeof priceId}). Please check your configuration and browser console.`);
+      return;
+    }
+
     const trimmedEmail = email.trim();
     console.log("Opening checkout with email:", trimmedEmail);
+    console.log("Price ID:", priceId);
+    console.log("Paddle environment:", window.Paddle.Environment?.get?.());
 
     const checkoutOptions: any = {
       items: [
         {
           priceId,
-          quantity: 1   // <-- enables quantity selector at checkout
+          quantity: 1
         }
       ],
       // Pass email in custom_data so it appears in webhooks
@@ -55,11 +69,13 @@ export default function BuyButton({ priceId, children, disabled = false }) {
     };
 
     console.log("Full checkout options:", JSON.stringify(checkoutOptions, null, 2));
-    console.log("Email passed to Paddle in email (top-level):", trimmedEmail);
-    console.log("Email passed to Paddle in customer.email:", trimmedEmail);
-    console.log("Email passed to Paddle in customData.email:", trimmedEmail);
 
-    window.Paddle.Checkout.open(checkoutOptions);
+    try {
+      window.Paddle.Checkout.open(checkoutOptions);
+    } catch (error) {
+      console.error("Error opening Paddle checkout:", error);
+      alert(`Error opening checkout: ${error instanceof Error ? error.message : 'Unknown error'}. Please check the console for details.`);
+    }
   };
 
   return (

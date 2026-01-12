@@ -20,6 +20,9 @@ export default function Navbar() {
         <Link href="/download" className="text-sm font-medium text-gray-700 hover:text-gray-900">
           Download
         </Link>
+        <Link href="/guide" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+          Guide
+        </Link>
         <button
           className="px-5 py-2 rounded-lg text-sm font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors"
         >

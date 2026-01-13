@@ -27,6 +27,9 @@ export default function Download() {
             <a
               href="https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-mac.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
+              download="WatermarkWizard-mac.zip"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download for Mac
             </a>
@@ -46,6 +49,9 @@ export default function Download() {
             <a
               href="https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-windows.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
+              download="WatermarkWizard-windows.zip"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download for Windows
             </a>

@@ -1,21 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default function Download() {
-  const [cacheBust, setCacheBust] = useState("");
-
-  useEffect(() => {
-    // Generate cache bust parameter on client side to bypass browser cache
-    setCacheBust(`?t=${Date.now()}`);
-  }, []);
-
-  const handleDownload = (baseUrl: string) => {
-    // Force fresh request on each click to bypass cache
-    window.open(`${baseUrl}?t=${Date.now()}`, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div className="px-6 md:px-10 py-16 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-center">Download Watermark Wizard</h1>
@@ -37,12 +24,14 @@ export default function Download() {
             For Mac computers running macOS 10.15 or later
           </p>
           <div className="mt-auto">
-            <button
-              onClick={() => handleDownload("https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-mac.zip")}
+            <a
+              href="https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-mac.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download for Mac
-            </button>
+            </a>
           </div>
         </div>
 
@@ -56,12 +45,14 @@ export default function Download() {
             For Windows 10 and Windows 11
           </p>
           <div className="mt-auto">
-            <button
-              onClick={() => handleDownload("https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-windows.zip")}
+            <a
+              href="https://github.com/DavePetersDigital/Watermarkwizard-app/releases/download/v1.0.1/WatermarkWizard-windows.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download for Windows
-            </button>
+            </a>
           </div>
         </div>
       </div>

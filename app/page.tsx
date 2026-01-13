@@ -149,13 +149,59 @@ export default function Home() {
         <div className="p-6 rounded-2xl bg-white border shadow-sm">
           <h3 className="font-semibold text-lg mb-2">Simple, Creator-Focused Design</h3>
           <p className="text-sm text-gray-600">
-            No menus, clutter, or complexity. Just drop your images in and export.
+            No menus, clutter, or complexity. Just drop your images in and start watermarking.
           </p>
         </div>
 
       </div>
 
       {/* -------------------------------------------------- */}
+
+      {/* HOW IT WORKS */}
+      <div className="mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+        <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
+          Watermark your images in just 5 simple steps — all processing happens locally on your device.
+        </p>
+        
+        <div className="grid md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+          {[
+            {
+              step: "1",
+              title: "Import Your Images",
+              description: "Drag and drop your images or select a folder. Supports JPEG and PNG formats."
+            },
+            {
+              step: "2",
+              title: "Select Output Folder",
+              description: "Choose where you want your watermarked images saved."
+            },
+            {
+              step: "3",
+              title: "Import Your Watermark",
+              description: "Upload your watermark image (PNG with transparency works best)."
+            },
+            {
+              step: "4",
+              title: "Choose Settings",
+              description: "Set position, size, opacity, and scale to match your style."
+            },
+            {
+              step: "5",
+              title: "Generate Watermarks",
+              description: "Click generate and watch your images get watermarked instantly."
+            }
+          ].map((item, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-white border-2 border-purple-100 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-600 text-white text-xl font-bold mb-4 mx-auto">
+                {item.step}
+              </div>
+              <h3 className="font-semibold text-lg mb-2 text-center">{item.title}</h3>
+              <p className="text-sm text-gray-600 text-center">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* TRIAL CALLOUT */}
       <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl max-w-2xl mx-auto">

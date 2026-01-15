@@ -25,7 +25,7 @@ export default function Download() {
           </p>
           <div className="mt-auto">
             <a
-              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.1/WatermarkWizard-mac.zip"
+              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.2/WatermarkWizard-mac.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function Download() {
           </p>
           <div className="mt-auto">
             <a
-              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.1/WatermarkWizard-windows.zip"
+              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.2/WatermarkWizard-windows.zip"
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"

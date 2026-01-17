@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./footer";
 import PaddleLoader from "./components/PaddleLoader";
 import Header from "./header";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Watermark Wizard",
@@ -32,6 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Footer */}
         <Footer />
+
+        <Analytics />
 
       </body>
     </html>

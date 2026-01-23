@@ -5,21 +5,21 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full py-6 px-6 border-b border-gray-200 bg-white">
+    <header className="w-full py-4 px-6 border-b border-gray-200 bg-white">
       <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
 
         {/* Logo + Name Centered */}
-        <Link href="/" className="flex flex-col items-center gap-3">
+        <Link href="/" className="flex flex-col items-center gap-2">
 
           <Image
             src="/logo.png"
             alt="Watermark Wizard"
-            width={96}   // <-- INCREASED (was 36)
-            height={96}  // <-- INCREASED
+            width={56}
+            height={56}
             priority
           />
 
-         <span className="text-4xl md:text-8xl font-bold leading-tight text-purple-700">
+         <span className="text-2xl md:text-4xl font-bold leading-tight text-purple-700">
   		Watermark Wizard
 		</span>
 

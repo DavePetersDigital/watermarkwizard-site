@@ -38,33 +38,47 @@ export default function Home() {
   return (
     <div className="px-6 md:px-10 py-16 max-w-6xl mx-auto text-center">
 
-      {/* HERO SECTION */}
-      <div className="max-w-3xl mx-auto mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-3">
-          Fast, Private<br />
-          Image Watermarking
+      {/* HERO SECTION - 2 Column Layout */}
+      <div className="max-w-6xl mx-auto mb-8">
+        <div className="grid md:grid-cols-2 gap-6 items-center">
+          
+          {/* LEFT COLUMN - Copy + CTA */}
+          <div className="text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2 max-w-2xl">
+              Protect Your Images Before You Share Them Online
         </h1>
 
-        <p className="text-lg md:text-xl font-semibold text-black mb-2">
-          Works on Mac & Windows
-        </p>
-        <p className="text-base text-gray-600 mb-6">
-          Start with a free 7-day trial — no credit card required
-        </p>
+            <p className="text-lg md:text-xl font-semibold text-black mb-3">
+              Fast, private image watermarking that runs locally on your computer — no uploads, no accounts.
+            </p>
 
-        {/* OS Badge */}
-        <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-lg mb-10">
-          <div className="flex items-center gap-2">
-            <Image src="/Apple-Logo.png" width={20} height={20} alt="Apple" /> macOS
-          </div>
-          <div className="h-2 w-2 rounded-full bg-purple-200"></div>
-          <div className="flex items-center gap-2">
-            <Image src="/Windows-Logo.png" width={20} height={20} alt="Windows" /> Windows
-          </div>
+            {/* Mobile: Primary CTA first */}
+            <div className="flex justify-center md:justify-start mb-2 md:hidden">
+              <a
+                href="/download"
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
+              >
+                Download Free Trial
+              </a>
+            </div>
+
+            {/* Mobile: Trust line after primary CTA */}
+            <p className="text-sm text-gray-600 mb-2 md:hidden">
+              Start with a free 7-day trial — no credit card required
+            </p>
+
+            {/* Mobile: Secondary CTA */}
+            <div className="flex justify-center md:justify-start mb-0 md:hidden">
+              <a
+                href="#pricing"
+                className="px-5 py-2.5 bg-white text-purple-500 border border-purple-300 rounded-lg text-xs font-medium hover:bg-purple-50 transition"
+              >
+                View Pricing
+              </a>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {/* Desktop: All CTAs together */}
+            <div className="hidden md:flex md:flex-row md:flex-wrap md:justify-start gap-3 mb-2">
           <a
             href="/download"
             className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
@@ -74,42 +88,77 @@ export default function Home() {
 
           <a
             href="#pricing"
-            className="px-6 py-3 bg-white text-purple-600 border-2 border-purple-600 rounded-lg text-sm font-semibold hover:bg-purple-50 transition"
+                className="px-5 py-2.5 bg-white text-purple-500 border border-purple-300 rounded-lg text-xs font-medium hover:bg-purple-50 transition"
           >
             View Pricing
           </a>
         </div>
 
-        {/* Video Demo - YouTube Embed */}
-        <div className="flex justify-center mt-6 mb-20">
-          <div 
-            className="relative max-w-full rounded-2xl overflow-hidden shadow-2xl"
+            {/* Desktop: Trust line under buttons */}
+            <p className="hidden md:block text-sm text-gray-600 mb-0">
+              Start with a free 7-day trial — no credit card required
+            </p>
+          </div>
+
+          {/* RIGHT COLUMN - Video */}
+          <div className="flex justify-center order-2 md:order-2">
+            <div 
+              className="relative max-w-full rounded-2xl overflow-hidden shadow-2xl"
             style={{
-              maxWidth: "650px",
-              width: "100%",
-              aspectRatio: "16/9"
-            }}
-          >
-            <div className="relative w-full h-0 pb-[56.25%]">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                src="https://www.youtube.com/embed/YUAetj-vHqc"
-                title="Watermark Wizard Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                style={{
-                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
-                }}
-              ></iframe>
+                maxWidth: "100%",
+                width: "100%",
+                aspectRatio: "16/9"
+              }}
+            >
+              <div className="relative w-full h-0 pb-[56.25%]">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                  src="https://www.youtube.com/embed/YUAetj-vHqc"
+                  title="Watermark Wizard Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
+                  }}
+                ></iframe>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* WHY WATERMARK SECTION + FEATURES - Combined Container */}
+      <div className="max-w-xl mx-auto py-10 mb-12">
+        {/* WHY WATERMARK SECTION */}
+        <div className="mb-8">
+          <h2 className="text-lg md:text-xl font-semibold mb-4 text-center">
+            Why watermark images before you post them?
+          </h2>
+          <div className="max-w-2xl mx-auto text-left">
+            <div className="space-y-3 mb-3">
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                <span className="text-xs md:text-sm text-gray-700 leading-snug">Images shared online can be downloaded and reused instantly</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                <span className="text-xs md:text-sm text-gray-700 leading-snug">A visible watermark discourages reposting and misrepresentation</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                <span className="text-xs md:text-sm text-gray-700 leading-snug">It takes seconds — and saves problems later</span>
+              </div>
+            </div>
+            <p className="text-xs md:text-sm text-gray-500 mt-2">
+              The best time to protect an image is before it goes public.
+            </p>
         </div>
       </div>
 
       {/* FEATURES */}
       <div
         id="features"
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20 text-left max-w-xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mt-8"
       >
         {[
           "Use on any combination of 2 devices (macOS + Windows)",
@@ -120,48 +169,18 @@ export default function Home() {
           "Clean, simple interface designed for creators",
         ].map((item, i) => (
           <div key={i} className="flex items-start gap-2">
-            <CheckIcon className="h-5 w-5 text-green-600 mt-0.5" />
-            <span className="text-sm text-gray-700">{item}</span>
+            <CheckIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+            <span className="text-sm text-gray-600">{item}</span>
           </div>
         ))}
+        </div>
       </div>
-
-      {/* -------------------------------------------------- */}
-      {/*  FEATURE HIGHLIGHT CARDS (Option C) */}
-      {/* -------------------------------------------------- */}
-
-      <div className="grid md:grid-cols-3 gap-6 my-16 max-w-5xl mx-auto">
-
-        <div className="p-6 rounded-2xl bg-white border shadow-sm">
-          <h3 className="font-semibold text-lg mb-2">No Uploading Needed</h3>
-          <p className="text-sm text-gray-600">
-            Everything runs locally. Your images never leave your device — unlike browser-based watermark tools.
-          </p>
-        </div>
-
-        <div className="p-6 rounded-2xl bg-white border shadow-sm">
-          <h3 className="font-semibold text-lg mb-2">Faster Than Online Tools</h3>
-          <p className="text-sm text-gray-600">
-            No waiting for uploads or downloads. Watermark entire batches instantly.
-          </p>
-        </div>
-
-        <div className="p-6 rounded-2xl bg-white border shadow-sm">
-          <h3 className="font-semibold text-lg mb-2">Simple, Creator-Focused Design</h3>
-          <p className="text-sm text-gray-600">
-            No menus, clutter, or complexity. Just drop your images in and start watermarking.
-          </p>
-        </div>
-
-      </div>
-
-      {/* -------------------------------------------------- */}
 
       {/* HOW IT WORKS */}
       <div className="mb-20">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
         <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
-          Watermark your images in just 5 simple steps — all processing happens locally on your device.
+          Watermark your images in 5 simple steps.
         </p>
         
         <div className="grid md:grid-cols-5 gap-4 max-w-6xl mx-auto">
@@ -169,7 +188,7 @@ export default function Home() {
             {
               step: "1",
               title: "Import Your Images",
-              description: "Drag and drop your images or select a folder. Supports JPEG and PNG formats."
+              description: "Select your images or drag and drop an entire folder."
             },
             {
               step: "2",
@@ -178,12 +197,12 @@ export default function Home() {
             },
             {
               step: "3",
-              title: "Import Your Watermark",
+              title: "Add Your Watermark",
               description: "Upload your watermark image (PNG with transparency works best)."
             },
             {
               step: "4",
-              title: "Choose Settings",
+              title: "Adjust Settings",
               description: "Set position, size, opacity, and scale to match your style."
             },
             {
@@ -192,7 +211,7 @@ export default function Home() {
               description: "Click generate and watch your images get watermarked instantly."
             }
           ].map((item, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-white border-2 border-purple-100 shadow-sm hover:shadow-md transition-shadow">
+            <div key={i} className="p-6 rounded-2xl bg-white border border-purple-50 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-600 text-white text-xl font-bold mb-4 mx-auto">
                 {item.step}
               </div>

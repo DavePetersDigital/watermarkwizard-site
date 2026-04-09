@@ -11,7 +11,8 @@ import type { NextRequest } from "next/server";
 function maintenanceEnabled(): boolean {
   const keys = [
     "MAINTENANCE_MODE",
-    "MAINTENENCE_MODE", // common misspelling of "maintenance"
+    "MAINTENENCE_MODE", // misspelling (all caps)
+    "Maintenence_mode", // as sometimes typed in dashboards
     "NEXT_PUBLIC_MAINTENANCE_MODE",
   ] as const;
   for (const key of keys) {

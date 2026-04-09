@@ -136,7 +136,7 @@ export default function Guide() {
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">Entering License Key</h2>
           <p className="text-gray-700 mb-4">
-            By default, Watermark Wizard will work for 7 days before a license key is required. Ensure you have an internet connection during activation.
+            By default, you can watermark up to 25 images free before a license key is required. Ensure you have an internet connection during activation.
           </p>
           <ol className="list-decimal list-inside space-y-3 text-gray-700">
             <li>Open Watermark Wizard</li>

@@ -11,7 +11,14 @@ export default function PrivacyPage() {
 
       <h2 className="text-xl font-semibold mt-8 mb-2">1. Images Are Processed Locally</h2>
       <p className="text-gray-700 mb-4">
-        Watermark Wizard processes all images locally on your device. Your images are never uploaded, transmitted or stored on our servers or any third-party system.
+        Watermark Wizard processes all images locally on your device. The application does not
+        upload, transmit, or store your images on our servers.
+      </p>
+      <p className="text-gray-700 mb-4">
+        If you choose to open or save images from third-party storage services (such as Google
+        Drive, Dropbox, or OneDrive), those services operate independently of Watermark Wizard
+        and are subject to their own privacy and security policies. Watermark Wizard does not
+        control or manage how your images are stored or transmitted by these services.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">2. Information We Collect</h2>
@@ -20,8 +27,8 @@ export default function PrivacyPage() {
       </p>
       <ul className="list-disc ml-6 text-gray-700 mb-4">
         <li>Your email address (for license access and purchase confirmations)</li>
-        <li>License status (to verify trial or active subscriptions)</li>
-        <li>Basic device information (to enforce device limits associated with your trial or paid subscription)</li>
+        <li>License status (to verify a free trial or an active paid lifetime license)</li>
+        <li>Basic device information (to enforce device limits associated with your trial or paid license)</li>
       </ul>
 
       <p className="text-gray-700 mb-4">
@@ -53,7 +60,7 @@ export default function PrivacyPage() {
       <p className="text-gray-700 mb-4">We use your information to:</p>
       <ul className="list-disc ml-6 text-gray-700 mb-4">
         <li>Provide access to the Software</li>
-        <li>Verify active trials or subscriptions</li>
+        <li>Verify active trials or paid lifetime licenses</li>
         <li>Deliver purchase confirmations or important notices</li>
         <li>Enforce applicable device limits</li>
       </ul>

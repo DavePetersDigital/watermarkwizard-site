@@ -10,20 +10,20 @@ export default function TermsPage() {
 
       <h2 className="text-xl font-semibold mt-8 mb-2">1. License</h2>
       <p className="mb-4 text-gray-700">
-        Watermark Wizard is licensed, not sold. During the free trial period, you are granted a limited, non-exclusive, non-transferable license to use the Software on one device.
+        Watermark Wizard is licensed, not sold. During the free trial period, you are granted a limited, non-exclusive, non-transferable license to use the Software subject to trial limits (such as a maximum number of watermarked images) enforced by the Software and our licensing services.
       </p>
       <p className="mb-4 text-gray-700">
-        With an active paid subscription, you are granted a non-exclusive, non-transferable license to use the Software on up to two devices in any combination of macOS and Windows.
+        When you complete a one-time purchase, you are granted a non-exclusive, non-transferable <strong>lifetime license</strong> to use the Software on up to two devices that you own or control, in any combination of macOS and Windows. This is not a subscription: you pay once, and there are no recurring fees for that license. Any rights to updates, new major versions, or support beyond what is stated at checkout or in your order confirmation are as described there.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">2. Free Trial</h2>
       <p className="mb-4 text-gray-700">
-        Watermark Wizard may offer a free trial that allows limited use of the Software. Trial limitations, including duration, usage limits, and device restrictions, are enforced by the Software and associated licensing services. Trial access ends automatically unless upgraded to a paid subscription.
+        Watermark Wizard may offer a free trial that allows limited use of the Software. Trial limitations, including usage limits and device restrictions, are enforced by the Software and associated licensing services. Trial access ends when those limits are reached or when you purchase a license, whichever applies.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">3. Subscription Plans</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">3. One-time purchase</h2>
       <p className="mb-4 text-gray-700">
-        Paid subscription plans renew automatically unless cancelled before the renewal date. When a subscription is cancelled, access remains available until the end of the current billing period. No further charges will be made after cancellation.
+        Paid access is sold as a <strong>one-time purchase</strong>. You are charged once at checkout unless you place a separate order. There is no automatic renewal or recurring billing for the standard lifetime license. Refunds and billing disputes are handled in line with Paddle&apos;s policies as merchant of record and any terms shown at checkout.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">4. Payments</h2>
@@ -33,7 +33,7 @@ export default function TermsPage() {
 
       <h2 className="text-xl font-semibold mt-8 mb-2">5. Software Delivery</h2>
       <p className="mb-4 text-gray-700">
-        Access to downloadable installers for macOS and Windows is provided while your trial or paid subscription is active.
+        Access to downloadable installers for macOS and Windows is provided for the free trial while it remains valid, and for licensed users in accordance with your lifetime license and our download or update practices described at purchase or on this website.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">6. Acceptable Use</h2>

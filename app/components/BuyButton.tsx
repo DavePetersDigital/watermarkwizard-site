@@ -1,10 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BuyButton({ priceId, children, disabled = false }) {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const onCheckoutError = (ev: Event) => {
+      const data = (ev as CustomEvent).detail as {
+        detail?: string;
+        message?: string;
+      };
+      const msg =
+        (typeof data?.detail === "string" && data.detail) ||
+        (typeof data?.message === "string" && data.message) ||
+        "Something went wrong at checkout. Please try again.";
+      console.error("Paddle checkout error:", data);
+      alert(`Checkout error: ${msg}`);
+    };
+    window.addEventListener("paddle-checkout-error", onCheckoutError);
+    return () =>
+      window.removeEventListener("paddle-checkout-error", onCheckoutError);
+  }, []);
 
   const handleButtonClick = () => {
     if (disabled) return; // Don't do anything if disabled

@@ -2,12 +2,27 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Set MAINTENANCE_MODE=true (or 1) in Vercel → Environment Variables → Production, then redeploy.
- * Remove it or set to false and redeploy to go live again.
+ * Vercel: set env for Production (exact name: MAINTENANCE_MODE, value: true or 1).
+ * After adding or changing the variable, trigger a new deployment (Redeploy) so the Edge
+ * bundle picks it up. Wrong names (e.g. Maintenence_mode) will not be read.
+ *
+ * Optional fallback: NEXT_PUBLIC_MAINTENANCE_MODE (also requires redeploy).
  */
+function maintenanceEnabled(): boolean {
+  const keys = [
+    "MAINTENANCE_MODE",
+    "MAINTENENCE_MODE", // common misspelling of "maintenance"
+    "NEXT_PUBLIC_MAINTENANCE_MODE",
+  ] as const;
+  for (const key of keys) {
+    const raw = process.env[key]?.trim().toLowerCase();
+    if (raw === "true" || raw === "1") return true;
+  }
+  return false;
+}
+
 export function middleware(_request: NextRequest) {
-  const flag = process.env.MAINTENANCE_MODE?.trim().toLowerCase();
-  if (flag !== "true" && flag !== "1") {
+  if (!maintenanceEnabled()) {
     return NextResponse.next();
   }
 
@@ -61,8 +76,10 @@ export function middleware(_request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Skip Next.js internals and common static assets so the 503 page always returns cleanly.
+     * Include "/" explicitly: patterns like /((?!...).*) often do NOT match the homepage in Next.js.
+     * See https://github.com/vercel/next.js/issues/62078
      */
+    "/",
     "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|txt)$).*)",
   ],
 };

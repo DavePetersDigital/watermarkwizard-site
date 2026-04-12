@@ -35,14 +35,6 @@ export default function Footer() {
           >
             Refund Policy
           </Link>
-          <span className="text-gray-400">•</span>
-
-          <Link
-            href="/eula"
-            className="hover:text-gray-900 transition-colors"
-          >
-            EULA
-          </Link>
         </div>
 
         <div className="text-center">

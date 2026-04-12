@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 
+/** Must match the tag on https://github.com/DavePetersDigital/Watermarkwizard-releases/releases */
+const RELEASE_TAG = "v2.0.0";
+const RELEASE_ASSET_BASE =
+  `https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/${RELEASE_TAG}`;
+
 export default function Download() {
   return (
     <div className="px-6 md:px-10 py-16 max-w-4xl mx-auto">
@@ -25,7 +30,7 @@ export default function Download() {
           </p>
           <div className="mt-auto">
             <a
-              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.3/WatermarkWizard-mac.zip"
+              href={`${RELEASE_ASSET_BASE}/WatermarkWizard-mac.zip`}
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -46,7 +51,7 @@ export default function Download() {
           </p>
           <div className="mt-auto">
             <a
-              href="https://github.com/DavePetersDigital/Watermarkwizard-releases/releases/download/v1.0.3/WatermarkWizard-windows.zip"
+              href={`${RELEASE_ASSET_BASE}/WatermarkWizard-windows.zip`}
               className="block w-full px-6 py-3 bg-purple-600 text-white rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"

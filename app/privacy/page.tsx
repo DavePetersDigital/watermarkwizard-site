@@ -4,85 +4,114 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
 
       <p className="text-gray-700 mb-4">
-        This Privacy Policy explains how we collect, use and protect information when you use
-        Watermark Wizard ("the Software") and this website ("the Service"). By using the Software,
-        you agree to the practices described in this policy.
+        This Privacy Policy explains how Watermark Wizard (&quot;we&quot;, &quot;us&quot;, or
+        &quot;our&quot;) collects, uses, and protects your information when you use our software
+        and related services.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">1. Images Are Processed Locally</h2>
       <p className="text-gray-700 mb-4">
         Watermark Wizard processes all images locally on your device. The application does not
-        upload, transmit, or store your images on our servers.
+        upload, transmit, store, or analyse your images on our servers.
       </p>
       <p className="text-gray-700 mb-4">
         If you choose to open or save images from third-party storage services (such as Google
         Drive, Dropbox, or OneDrive), those services operate independently of Watermark Wizard
-        and are subject to their own privacy and security policies. Watermark Wizard does not
-        control or manage how your images are stored or transmitted by these services.
+        and are subject to their own privacy and security policies. We do not control how those
+        services store or process your files.
+      </p>
+      <p className="text-gray-700 mb-4">
+        At no point does Watermark Wizard access, view, or process your images outside of your
+        device.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">2. Information We Collect</h2>
       <p className="text-gray-700 mb-4">
-        We collect only the information necessary to operate the Service and manage licenses. This may include:
+        We collect limited technical information required to operate the Software and manage
+        licensing. This may include:
       </p>
-      <ul className="list-disc ml-6 text-gray-700 mb-4">
-        <li>Your email address (for license access and purchase confirmations)</li>
-        <li>License status (to verify a free trial or an active paid lifetime license)</li>
-        <li>Basic device information (to enforce device limits associated with your trial or paid license)</li>
-      </ul>
-
-      <p className="text-gray-700 mb-4">
-        We do not collect personal files, images, or any content processed through the Software.
-      </p>
-
-      <h2 className="text-xl font-semibold mt-8 mb-2">3. Optional Analytics (Currently Disabled)</h2>
-      <p className="text-gray-700 mb-4">
-        The Software may support optional analytics in future updates, such as anonymized usage, error logs or crash reports. At present, all analytics features are disabled by default.
-      </p>
-      <p className="text-gray-700 mb-4">
-        If enabled in the future, analytics will:
-      </p>
-      <ul className="list-disc ml-6 text-gray-700 mb-4">
-        <li>Exclude images and media files</li>
-        <li>Not collect personally identifiable information</li>
-        <li>Be used solely to improve performance and stability</li>
+      <ul className="list-disc ml-6 text-gray-700 mb-4 space-y-1">
+        <li>Device identifiers (used to enforce license limits)</li>
+        <li>License or purchase status</li>
+        <li>Basic application usage data (such as number of images processed)</li>
       </ul>
       <p className="text-gray-700 mb-4">
-        Any such changes will be disclosed in this Privacy Policy.
+        We do not collect, store, or have access to your images.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">4. Payment Information</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">3. Licensing and Verification</h2>
       <p className="text-gray-700 mb-4">
-        Payments, taxation, fraud prevention and currency conversion are handled by Paddle.com, which acts as our payment provider and merchant of record. We do not store or process payment card information.
+        The Software communicates with our licensing systems to verify trial eligibility, license
+        validity, and enforce device limits. This may involve periodic checks using your device
+        identifier and license information.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">5. How We Use Your Information</h2>
-      <p className="text-gray-700 mb-4">We use your information to:</p>
-      <ul className="list-disc ml-6 text-gray-700 mb-4">
-        <li>Provide access to the Software</li>
-        <li>Verify active trials or paid lifetime licenses</li>
-        <li>Deliver purchase confirmations or important notices</li>
-        <li>Enforce applicable device limits</li>
+      <h2 className="text-xl font-semibold mt-8 mb-2">4. Payments</h2>
+      <p className="text-gray-700 mb-4">
+        Payments are processed securely by Paddle.com, which acts as the merchant of record. We do
+        not collect or store your payment information.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">5. How We Use Information</h2>
+      <p className="text-gray-700 mb-4">We use collected information solely to:</p>
+      <ul className="list-disc ml-6 text-gray-700 mb-4 space-y-1">
+        <li>Provide and maintain the Software</li>
+        <li>Enforce licensing terms and trial limits</li>
+        <li>Improve performance and reliability</li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">6. Data Security</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">6. Data Sharing</h2>
       <p className="text-gray-700 mb-4">
-        We use secure systems and industry best practices to protect your data. Your images remain on your device at all times.
+        We do not sell, rent, or share your personal information.
+      </p>
+      <p className="text-gray-700 mb-4">
+        We may share limited information with trusted third-party providers strictly as required
+        to operate the Service, including payment processing (such as Paddle) and licensing
+        infrastructure. These providers are required to protect your information.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">7. Legal Compliance</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">7. Data Security</h2>
       <p className="text-gray-700 mb-4">
-        We comply with applicable privacy regulations, including GDPR and CCPA. You may request access to or deletion of your stored account information by contacting us via the support details listed on this website.
+        We take reasonable technical and organisational measures to protect your information.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">8. Third Parties</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">8. Data Retention</h2>
       <p className="text-gray-700 mb-4">
-        We do not sell, rent or share your information with third parties except as required for secure payment processing and delivery of the Software.
+        We retain only the information necessary to provide the Service and manage licenses.
+        License and device-related data may be retained for as long as required to support your
+        access and comply with legal obligations.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">9. Changes to This Policy</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">9. International Users</h2>
       <p className="text-gray-700 mb-4">
-        This Privacy Policy may be updated from time to time. Updates will be posted on this page with a revised effective date.
+        The Software may be used worldwide. Your information may be processed in Australia or
+        other countries where our service providers operate.
+      </p>
+      <p className="text-gray-700 mb-4">
+        We aim to comply with applicable privacy laws where relevant, including GDPR and CCPA.
+        However, rights and obligations may vary depending on your location.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">10. Your Rights</h2>
+      <p className="text-gray-700 mb-4">
+        You may request access to or deletion of your personal data by contacting us.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">11. Changes to This Policy</h2>
+      <p className="text-gray-700 mb-4">
+        We may update this Privacy Policy from time to time. Updates will be posted on our
+        website.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">12. Contact</h2>
+      <p className="text-gray-700 mb-4">
+        For any privacy-related questions, contact us at:{" "}
+        <a
+          href="mailto:support@davepetersdigital.com"
+          className="text-purple-600 hover:text-purple-700 font-semibold"
+        >
+          support@davepetersdigital.com
+        </a>
       </p>
 
       <p className="mt-8 text-gray-500 text-sm">Last updated: {new Date().getFullYear()}</p>

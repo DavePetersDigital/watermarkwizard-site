@@ -1,59 +1,142 @@
+import Link from "next/link";
+
 export default function TermsPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
 
       <p className="mb-4 text-gray-700">
-        These Terms of Service ("Terms") govern your use of Watermark Wizard ("the Software")
-        and all related services ("the Service"). By downloading, installing, or using the Software, you agree to these Terms.
+        These Terms of Service (&quot;Terms&quot;) govern your use of Watermark Wizard
+        (&quot;the Software&quot;) and related services (&quot;the Service&quot;). By
+        downloading, installing, or using the Software, you agree to these Terms.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">1. License</h2>
+      <p className="mb-4 text-gray-700">Watermark Wizard is licensed, not sold.</p>
       <p className="mb-4 text-gray-700">
-        Watermark Wizard is licensed, not sold. During the free trial period, you are granted a limited, non-exclusive, non-transferable license to use the Software subject to trial limits (such as a maximum number of watermarked images) enforced by the Software and our licensing services.
+        During the free trial period, you are granted a limited, non-exclusive,
+        non-transferable license to use the Software subject to trial limits enforced by the
+        Software and our licensing systems.
       </p>
       <p className="mb-4 text-gray-700">
-        When you complete a one-time purchase, you are granted a non-exclusive, non-transferable <strong>lifetime license</strong> to use the Software on up to two devices that you own or control, in any combination of macOS and Windows. This is not a subscription: you pay once, and there are no recurring fees for that license. Any rights to updates, new major versions, or support beyond what is stated at checkout or in your order confirmation are as described there.
+        When you complete a one-time purchase, you are granted a non-exclusive,
+        non-transferable lifetime license to use the Software on up to two devices that you own
+        or control, in any combination of macOS and Windows.
+      </p>
+      <p className="mb-4 text-gray-700">
+        Watermark Wizard may implement technical measures to enforce license limits, including
+        device restrictions and usage limits.
+      </p>
+      <p className="mb-4 text-gray-700">
+        Any rights to updates, new versions, or support are as described at the time of
+        purchase.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">2. Free Trial</h2>
       <p className="mb-4 text-gray-700">
-        Watermark Wizard may offer a free trial that allows limited use of the Software. Trial limitations, including usage limits and device restrictions, are enforced by the Software and associated licensing services. Trial access ends when those limits are reached or when you purchase a license, whichever applies.
+        The Software may offer a free trial with usage and device limitations. Trial access
+        ends when those limits are reached or when a license is purchased.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">3. One-time purchase</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">3. One-Time Purchase</h2>
       <p className="mb-4 text-gray-700">
-        Paid access is sold as a <strong>one-time purchase</strong>. You are charged once at checkout unless you place a separate order. There is no automatic renewal or recurring billing for the standard lifetime license. Refunds and billing disputes are handled in line with Paddle&apos;s policies as merchant of record and any terms shown at checkout.
+        Paid access is sold as a one-time purchase. There is no automatic renewal or recurring
+        billing for the standard license.
+      </p>
+      <p className="mb-4 text-gray-700">
+        Refunds and billing disputes are handled by Paddle as the merchant of record in
+        accordance with their policies and any terms presented at checkout.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">4. Payments</h2>
       <p className="mb-4 text-gray-700">
-        Payments, refunds, tax handling, and currency conversion are processed by Paddle.com, which acts as the authorized payment provider and merchant of record for Watermark Wizard. We do not store or process payment information directly.
+        Payments, taxes, and refunds are processed by Paddle.com, which acts as the merchant of
+        record. We do not store or process payment details.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">5. Software Delivery</h2>
       <p className="mb-4 text-gray-700">
-        Access to downloadable installers for macOS and Windows is provided for the free trial while it remains valid, and for licensed users in accordance with your lifetime license and our download or update practices described at purchase or on this website.
+        Access to installers is provided for trial and licensed users in accordance with your
+        license and any terms described at purchase.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">6. Acceptable Use</h2>
-      <p className="mb-4 text-gray-700">
-        You agree not to reverse engineer, modify, distribute, resell, sublicense, or otherwise misuse the Software. Sharing license keys or access credentials is prohibited.
-      </p>
+      <p className="mb-4 text-gray-700">You agree not to:</p>
+      <ul className="list-disc ml-6 text-gray-700 mb-4 space-y-1">
+        <li>Reverse engineer, decompile, or attempt to extract source code</li>
+        <li>Modify or create derivative works</li>
+        <li>Distribute, sell, sublicense, or share access to the Software</li>
+        <li>Bypass or attempt to bypass licensing or usage restrictions</li>
+      </ul>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">7. Privacy</h2>
       <p className="mb-4 text-gray-700">
-        Watermark Wizard processes images locally on your device. Images are not uploaded or stored by the Software. Additional details are available in our Privacy Policy.
+        Watermark Wizard processes images locally on your device. Images are not uploaded or
+        stored by the Software. See our{" "}
+        <Link href="/privacy" className="text-purple-600 hover:text-purple-700 font-semibold">
+          Privacy Policy
+        </Link>{" "}
+        for full details.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">8. Disclaimer</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">8. Disclaimer and Limitation of Liability</h2>
       <p className="mb-4 text-gray-700">
-        The Software is provided "as is" without warranties of any kind, express or implied. To the maximum extent permitted by law, we are not liable for any loss or damage arising from use of the Software.
+        The Software is provided &quot;as is&quot; and &quot;as available&quot; without warranties
+        of any kind, to the extent permitted by law.
+      </p>
+      <p className="mb-4 text-gray-700">You use the Software at your own risk.</p>
+      <p className="mb-4 text-gray-700">
+        We take reasonable steps to ensure the Software is free from viruses and harmful
+        components. However, we do not guarantee that the Software will be free from defects,
+        errors, or harmful elements, and you are responsible for implementing appropriate
+        safeguards on your devices.
+      </p>
+      <p className="mb-4 text-gray-700">
+        To the maximum extent permitted by law, Watermark Wizard excludes all liability for any
+        indirect, incidental, special, or consequential loss, including loss of data, loss of
+        business, or loss of profits arising from or in connection with your use of the Software.
+      </p>
+      <p className="mb-4 text-gray-700">
+        Where liability cannot be excluded under applicable law (including under the Australian
+        Consumer Law), our liability is limited, at our option, to:
+      </p>
+      <ul className="list-disc ml-6 text-gray-700 mb-4 space-y-1">
+        <li>(a) replacement of the Software; or</li>
+        <li>(b) the cost of replacing or re-supplying the Software.</li>
+      </ul>
+      <p className="mb-4 text-gray-700">
+        Nothing in these Terms excludes, restricts, or modifies any rights you may have under
+        applicable consumer protection laws.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">9. Governing Law</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">9. Termination</h2>
       <p className="mb-4 text-gray-700">
-        These Terms are governed by the laws of Australia, and any disputes shall be handled in the applicable courts of Australia.
+        We may suspend or terminate your access to the Software if you breach these Terms.
+      </p>
+      <p className="mb-4 text-gray-700">
+        Upon termination, your right to use the Software ceases.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">10. Changes to These Terms</h2>
+      <p className="mb-4 text-gray-700">
+        We may update these Terms from time to time. Updated Terms will be posted on our website
+        and take effect upon publication.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">11. Governing Law</h2>
+      <p className="mb-4 text-gray-700">
+        These Terms are governed by the laws of Queensland, Australia. Any disputes will be
+        handled in the courts of Queensland, Australia.
+      </p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-2">12. International Use</h2>
+      <p className="mb-4 text-gray-700">
+        The Software may be accessed and used worldwide. You are responsible for ensuring that
+        your use of the Software complies with the laws applicable in your jurisdiction.
+      </p>
+      <p className="mb-4 text-gray-700">
+        We make no representation that the Software is appropriate or compliant with laws
+        outside of Australia.
       </p>
 
       <p className="mt-8 text-gray-500 text-sm">Last updated: {new Date().getFullYear()}</p>

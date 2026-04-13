@@ -20,11 +20,9 @@ export default function Guide() {
               </p>
             </div>
             <a
-              href="https://raw.githubusercontent.com/DavePetersDigital/Watermarkwizard-app/main/docs/WatermarkWizard-UserGuide.pdf"
+              href="/WatermarkWizard-UserGuide.pdf"
               className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors whitespace-nowrap"
               download="WatermarkWizard-UserGuide.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Download PDF
             </a>

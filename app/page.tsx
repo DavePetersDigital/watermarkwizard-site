@@ -208,9 +208,13 @@ export default function Home() {
       <div id="pricing" className="mt-12 mb-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Pricing</h2>
 
-        <p className="text-gray-600 text-sm mb-10 max-w-2xl mx-auto">
-          One purchase unlocks both macOS &amp; Windows versions. All prices in USD — converted to your local currency at checkout, with any taxes applied automatically.
-        </p>
+        <div className="text-gray-600 text-sm mb-10 max-w-2xl mx-auto space-y-2">
+          <p>One purchase unlocks both macOS &amp; Windows versions.</p>
+          <p className="font-bold text-gray-700">
+            All prices in USD — converted to your local currency at checkout, with any taxes applied
+            automatically.
+          </p>
+        </div>
 
         <div className="max-w-md mx-auto text-left">
           <div className="border-2 border-purple-600 rounded-2xl p-6 shadow-md flex flex-col bg-white relative">

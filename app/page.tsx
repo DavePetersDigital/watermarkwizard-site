@@ -2,8 +2,16 @@
 
 import { useEffect } from "react";
 import { CheckIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import BuyButton from "./components/BuyButton";
 import Image from "next/image";
+
+const TRUST_PILLS = [
+  "Mac & Windows",
+  "Batch processing",
+  "PNG transparency",
+  "One-time purchase",
+];
 
 export default function Home() {
   const licensePriceId =
@@ -21,109 +29,141 @@ export default function Home() {
   const checkoutEnabled = process.env.NEXT_PUBLIC_ENABLE_CHECKOUT === "true";
 
   return (
-    <div className="px-6 md:px-10 py-16 max-w-6xl mx-auto text-center">
-      {/* HERO SECTION - 2 Column Layout */}
-      <div className="max-w-6xl mx-auto mb-8">
-        <div className="grid md:grid-cols-2 gap-6 items-center">
+    <div className="px-6 md:px-10 py-12 md:py-16 max-w-6xl mx-auto text-center">
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          {/* Left — copy */}
           <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2 max-w-2xl">
-              Protect Your Images Before You Share Them Online
+            <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-3 py-1.5 text-sm font-medium text-green-900 mb-5">
+              <span
+                className="h-2 w-2 shrink-0 rounded-full bg-green-600"
+                aria-hidden
+              />
+              Works offline — no uploads ever
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold leading-tight mb-4 text-gray-900">
+              Watermark hundreds of images in seconds
             </h1>
 
-            <p className="text-lg md:text-xl font-semibold text-black mb-3">
-              Fast, private image watermarking that runs locally on your computer — no uploads, no accounts.
+            <p className="text-base md:text-lg text-gray-600 mb-6 max-w-xl mx-auto md:mx-0 leading-relaxed">
+              Batch-process your entire photo library privately on your computer. No cloud, no
+              subscription, no waiting. One purchase — Mac and Windows.
             </p>
 
-            <div className="flex justify-center md:justify-start mb-2 md:hidden">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mb-4">
               <a
                 href="/download"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
+                className="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition shadow-sm"
               >
-                Download Free Trial
+                Download free trial
               </a>
-            </div>
-
-            <p className="text-sm text-gray-600 mb-2 md:hidden">
-              Try free — you can test on 25 images before you buy — no credit card required
-            </p>
-
-            <div className="flex justify-center md:justify-start mb-0 md:hidden">
               <a
                 href="#pricing"
-                className="px-5 py-2.5 bg-white text-purple-500 border border-purple-300 rounded-lg text-xs font-medium hover:bg-purple-50 transition"
+                className="inline-flex items-center justify-center px-5 py-3 bg-white text-purple-600 border-2 border-purple-300 rounded-lg text-sm font-semibold hover:bg-purple-50 transition"
               >
-                View pricing
+                View pricing — $29.99
               </a>
             </div>
 
-            <div className="hidden md:flex md:flex-row md:flex-wrap md:justify-start gap-3 mb-2">
-              <a
-                href="/download"
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700 transition"
-              >
-                Download Free Trial
-              </a>
-
-              <a
-                href="#pricing"
-                className="px-5 py-2.5 bg-white text-purple-500 border border-purple-300 rounded-lg text-xs font-medium hover:bg-purple-50 transition"
-              >
-                View pricing
-              </a>
-            </div>
-
-            <p className="hidden md:block text-sm text-gray-600 mb-0">
-              Try free — you can test on 25 images before you buy — no credit card required
+            <p className="text-sm text-gray-500 mb-6">
+              Try on 25 images free · No credit card · No account needed
             </p>
+
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              {TRUST_PILLS.map((label) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm"
+                >
+                  <CheckIcon className="h-3.5 w-3.5 text-green-600 shrink-0" />
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="flex justify-center order-2 md:order-2">
-            <div
-              className="relative max-w-full rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                maxWidth: "100%",
-                width: "100%",
-                aspectRatio: "16/9",
-              }}
-            >
-              <div className="relative w-full h-0 pb-[56.25%]">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                  src="https://www.youtube.com/embed/NJMXFAR_r2s"
-                  title="Watermark Wizard Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{
-                    filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
-                  }}
-                ></iframe>
+          {/* Right — before / after visual */}
+          <div className="w-full">
+            <div className="rounded-2xl bg-gray-100 p-4 md:p-5 border border-gray-200/80">
+              <div className="flex items-stretch gap-2 sm:gap-3">
+                {/* Original */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-semibold text-gray-600 mb-2 text-left">Original</p>
+                  <div className="relative aspect-[4/3] w-full rounded-lg bg-gray-200 overflow-hidden border border-gray-300/80">
+                    <Image
+                      src="/original.jpg"
+                      alt="Original example"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                <div className="flex shrink-0 items-center justify-center self-center pt-8">
+                  <ArrowRightIcon className="h-7 w-7 text-gray-400" aria-hidden />
+                </div>
+
+                {/* Watermarked */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-semibold text-gray-600 mb-2 text-left">Watermarked</p>
+                  <div className="relative aspect-[4/3] w-full rounded-lg bg-gray-200 overflow-hidden border border-gray-300/80">
+                    <Image
+                      src="/watermarked.jpg"
+                      alt="Watermarked example"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
+                {[
+                  "100+ images/min",
+                  "Select up to 25 different positions",
+                  "One-time purchase",
+                ].map((label) => (
+                  <div
+                    key={label}
+                    className="rounded-xl bg-white border border-gray-200 px-2 py-3 text-center shadow-sm"
+                  >
+                    <p className="text-[11px] sm:text-xs font-bold text-gray-900 leading-tight">
+                      {label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* FEATURES */}
-      <div className="max-w-xl mx-auto py-10 mb-12">
+      {/* VIDEO */}
+      <section className="w-full max-w-4xl mx-auto mb-16 md:mb-20 text-center">
+        <h2 className="text-lg font-semibold text-gray-700 mb-6">See it in action</h2>
         <div
-          id="features"
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
+          className="relative max-w-full rounded-2xl overflow-hidden shadow-2xl mx-auto"
+          style={{ width: "100%", aspectRatio: "16/9" }}
         >
-          {[
-            "Use on any combination of 2 devices (macOS + Windows)",
-            "Lightning-fast processing — no image uploads",
-            "Private — all watermarking happens locally on your device",
-            "Batch processing for speed",
-            "PNG transparency and high-resolution exports",
-            "Clean, simple interface designed for creators",
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <CheckIcon className="h-4 w-4 text-gray-400 mt-0.5" />
-              <span className="text-sm text-gray-600">{item}</span>
-            </div>
-          ))}
+          <div className="relative w-full h-0 pb-[56.25%]">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-2xl"
+              src="https://www.youtube.com/embed/NJMXFAR_r2s"
+              title="Watermark Wizard Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{
+                filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))",
+              }}
+            />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* HOW IT WORKS */}
       <div className="mb-20">
@@ -181,7 +221,8 @@ export default function Home() {
           <h3 className="text-xl font-bold text-purple-900">Try Before You Buy</h3>
         </div>
         <p className="text-gray-700 text-sm mb-3">
-          Download Watermark Wizard and <strong>you can test on 25 images before you buy</strong> — no credit card required.
+          Download Watermark Wizard and <strong>you can test on 25 images before you buy</strong> — no
+          credit card required.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
           <div className="flex items-center gap-1">
@@ -204,7 +245,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PRICING — single one-time card */}
+      {/* PRICING */}
       <div id="pricing" className="mt-12 mb-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Pricing</h2>
 
@@ -263,7 +304,8 @@ export default function Home() {
       </div>
 
       <p className="mt-10 text-xs text-gray-500 leading-relaxed max-w-xl mx-auto">
-        This is a one-time purchase. Your license is valid for the term shown in your confirmation email. No recurring charges.
+        This is a one-time purchase. Your license is valid for the term shown in your confirmation
+        email. No recurring charges.
       </p>
 
       <div className="flex flex-col items-center mt-6 text-gray-400 text-xs">
@@ -273,7 +315,7 @@ export default function Home() {
         <div className="mt-1">Payments powered by Paddle</div>
       </div>
 
-      {/* WHY WATERMARK — moved to bottom */}
+      {/* WHY WATERMARK */}
       <div className="max-w-xl mx-auto py-16 mt-8 border-t border-gray-200">
         <h2 className="text-lg md:text-xl font-semibold mb-4 text-center">
           Why watermark images before you post them?
@@ -281,19 +323,19 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-left">
           <div className="space-y-3 mb-3">
             <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
               <span className="text-xs md:text-sm text-gray-700 leading-snug">
                 Images shared online can be downloaded and reused instantly
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
               <span className="text-xs md:text-sm text-gray-700 leading-snug">
                 A visible watermark discourages reposting and misrepresentation
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5 flex-shrink-0" />
               <span className="text-xs md:text-sm text-gray-700 leading-snug">
                 It takes seconds — and saves problems later
               </span>
